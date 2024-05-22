@@ -50,6 +50,7 @@ ModuleLayoutSection InstructionLayoutSection(
       return kLayoutEntryPoint;
     case spv::Op::OpExecutionMode:
     case spv::Op::OpExecutionModeId:
+    case spv::Op::OpExecutionGlobalSizeTALVOS:
       return kLayoutExecutionMode;
     case spv::Op::OpSourceContinued:
     case spv::Op::OpSource:
@@ -73,6 +74,7 @@ ModuleLayoutSection InstructionLayoutSection(
     case spv::Op::OpTypeForwardPointer:
       return kLayoutTypes;
     case spv::Op::OpVariable:
+    case spv::Op::OpBufferTALVOS:
       if (current_section == kLayoutTypes) return kLayoutTypes;
       return kLayoutFunctionDefinitions;
     case spv::Op::OpExtInst:

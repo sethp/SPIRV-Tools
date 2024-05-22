@@ -86,7 +86,8 @@ spv_result_t ValidateFunction(ValidationState_t& _, const Instruction* inst) {
       spv::Op::OpGetKernelPreferredWorkGroupSizeMultiple,
       spv::Op::OpGetKernelLocalSizeForSubgroupCount,
       spv::Op::OpGetKernelMaxNumSubgroups,
-      spv::Op::OpName};
+      spv::Op::OpName,
+      spv::Op::OpExecutionGlobalSizeTALVOS};
   for (auto& pair : inst->uses()) {
     const auto* use = pair.first;
     if (std::find(acceptable.begin(), acceptable.end(), use->opcode()) ==
